@@ -1,0 +1,15 @@
+Attached is a base project with side-scrolling player movement controller.
+
+Create some simple behaviour as shown in the video, with this specification:
+
+1. Player can interact with other object with input E.
+2. Create 3 interactive object with these behaviours :
+	a. object shows bubble text for 1 second
+	b. object expand when small, and shrink when big
+	c. object goes away from player by 2 unit from its initial position
+3. All interactive object have a window time where they cannot receive immediate interaction again in 1 second
+4. Player can only interact with 1 object at a time. The first object in contact will have priority
+
+Create these behaviour with clean code in mind. 
+The time limit for submission is 24 hours since test files is provided.
+Good luck!
