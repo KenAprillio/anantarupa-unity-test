@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* This is a Scriptable Object to store all the object actions/methods
+	rather than using multiple scripts for each object with different 
+	actions */
+
 [CreateAssetMenu(fileName = "Object Action SO")]
 public class ObjectActionsSO : ScriptableObject
 {

@@ -8,8 +8,8 @@ namespace ProgrammerTest
 		[SerializeField] private Transform playerView;
 		private bool _facingRight = true;
 		private const float Speed = 10f;
-		[SerializeField] List<ObjectInteract> objectArr;
-		int col;
+		[SerializeField] private List<ObjectInteract> objectList;
+		private int col;
 
 
 		void Update()
@@ -51,24 +51,23 @@ namespace ProgrammerTest
 		
 		private void StartInteract()
 		{
-			if (objectArr.Count == 0) return;
+			// Checks if List has items
+			if (objectList.Count == 0) return;
 			
-			objectArr[0].Interact();
-			
+			// Interacts with the first item on the list
+			objectList[0].Interact();
 		}
 		
 		private void OnTriggerEnter(Collider other) {
-			if(other.TryGetComponent(out ObjectInteract obj))
-			{
-				objectArr.Add(obj);
-			}
+			// Adds the ObjectInteract object to the list when trigger enter
+			if(other.TryGetComponent(out ObjectInteract obj)) 
+				objectList.Add(obj);
 		}
 		
 		private void OnTriggerExit(Collider other) {
+			// Removes the ObjectInteract object to the list when trigger exit
 			if(other.TryGetComponent(out ObjectInteract obj))
-			{
-				objectArr.Remove(obj);
-			}
+				objectList.Remove(obj);
 		}
 	}
 }
